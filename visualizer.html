@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizer Gallery | VERONA Tiles & Sanitaryware Showroom</title>
+  <!-- Architectural Tile / Ceramic Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F172A'/%3E%3Cpath d='M6 6h9v9H6zm11 0h9v9h-9zm-11 11h9v9H6zm11 11V17h9v9z' fill='%23C5A880'/%3E%3C/svg%3E">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#FBFBF9',
+              100: '#F4F2EC',
+              200: '#E7E2D5',
+              300: '#D5CCB8',
+              400: '#BEB196',
+              500: '#C5A880',
+              600: '#A38760',
+              700: '#7F6848',
+              800: '#5A4A33',
+              900: '#342B1D',
+              950: '#1A150E'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body class="bg-white dark:bg-[#0A0A0B] text-neutral-800 dark:text-neutral-300 font-sans antialiased overflow-x-hidden transition-colors duration-200">
+
+
+  <!-- GLOBAL HEADER & NAVBAR (Identical across all pages) -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0A0A0B]/95 border-b border-neutral-200 dark:border-neutral-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 xl:px-8">
+      <div class="flex items-center justify-between h-20 w-full gap-2 lg:gap-4">
+        
+        <!-- Logo & Brand Name -->
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none flex-shrink-0" aria-label="VERONA Surfaces Homepage">
+          <div class="w-10 h-10 bg-neutral-900 dark:bg-white flex items-center justify-center text-white dark:text-neutral-950 font-bold text-xl tracking-tight border-sharp">
+            V
+          </div>
+          <div class="flex flex-col">
+            <span class="tracking-widest text-lg font-bold text-neutral-950 dark:text-white uppercase leading-none">VERONA</span>
+            <span class="text-[9px] tracking-[0.25em] uppercase text-neutral-500 dark:text-neutral-400 font-semibold mt-1">Surfaces & Sanitary</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation (>=1024px) - Single Line with Reduced Font & No Wrapping -->
+        <nav class="hidden lg:flex items-center gap-x-3.5 xl:gap-x-6 navbar-nav-links whitespace-nowrap flex-shrink-0" aria-label="Primary Navigation">
+          
+          <!-- Home Demos Dropdown Menu -->
+          <div class="relative flex-shrink-0" id="home-dropdown-container">
+            <button id="home-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1 py-2 text-[11px] xl:text-xs font-semibold tracking-wide uppercase text-neutral-700 dark:text-neutral-300 hover:text-[#C5A880] dark:hover:text-[#C5A880] transition-colors focus:outline-none navbar-link-item whitespace-nowrap">
+              <span class="whitespace-nowrap">Home Demos</span>
+              <svg class="w-3 h-3 transition-transform duration-200 nav-link-chevron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="home-dropdown-menu" class="hidden absolute top-full left-0 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xl py-2 z-50 dropdown-menu">
+              <a href="index.html" class="block px-4 py-2.5 text-xs uppercase tracking-wider text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-[#C5A880] transition-colors whitespace-nowrap">
+                1. Signature Collections
+              </a>
+              <a href="home-showroom.html" class="block px-4 py-2.5 text-xs uppercase tracking-wider text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-[#C5A880] transition-colors whitespace-nowrap">
+                2. Sanitaryware Elegance
+              </a>
+            </div>
+          </div>
+
+          <!-- Standard Links (Guaranteed Single Line, No Wrapping) -->
+          <a href="about.html" class="text-[11px] xl:text-xs font-semibold tracking-wide uppercase text-neutral-700 dark:text-neutral-300 hover:text-[#C5A880] dark:hover:text-[#C5A880] transition-colors navbar-link-item whitespace-nowrap ">About Us</a>
+          <a href="products.html" class="text-[11px] xl:text-xs font-semibold tracking-wide uppercase text-neutral-700 dark:text-neutral-300 hover:text-[#C5A880] dark:hover:text-[#C5A880] transition-colors navbar-link-item whitespace-nowrap ">Products</a>
+          <a href="visualizer.html" class="text-[11px] xl:text-xs font-semibold tracking-wide uppercase text-neutral-700 dark:text-neutral-300 hover:text-[#C5A880] dark:hover:text-[#C5A880] transition-colors navbar-link-item whitespace-nowrap text-[#C5A880] dark:text-[#C5A880] font-bold">Visualizer Gallery</a>
+          <a href="blog.html" class="text-[11px] xl:text-xs font-semibold tracking-wide uppercase text-neutral-700 dark:text-neutral-300 hover:text-[#C5A880] dark:hover:text-[#C5A880] transition-colors navbar-link-item whitespace-nowrap ">Blog</a>
+          <a href="contact.html" class="text-[11px] xl:text-xs font-semibold tracking-wide uppercase text-neutral-700 dark:text-neutral-300 hover:text-[#C5A880] dark:hover:text-[#C5A880] transition-colors navbar-link-item whitespace-nowrap ">Contact</a>
+        </nav>
+
+        <!-- Right Utilities & CTA (Desktop) - Arrow icon ONLY, no text -->
+        <div class="hidden lg:flex items-center gap-x-2 xl:gap-x-3.5 navbar-utilities flex-shrink-0 whitespace-nowrap">
+          <!-- RTL/LTR Double Arrow Toggle (ONLY ARROW ICON - NO TEXT) -->
+          <button type="button" class="rtl-toggle-btn p-2 xl:p-2.5 border border-neutral-200 dark:border-neutral-800 hover:border-[#C5A880] text-neutral-700 dark:text-neutral-300 transition-colors flex items-center justify-center border-sharp focus:outline-none flex-shrink-0" title="Toggle RTL / LTR Direction" aria-label="Toggle Direction">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+          </button>
+
+          <!-- Dark/Light Theme Toggle -->
+          <button type="button" class="theme-toggle-btn p-2 xl:p-2.5 border border-neutral-200 dark:border-neutral-800 hover:border-[#C5A880] text-neutral-700 dark:text-neutral-300 transition-colors border-sharp focus:outline-none flex-shrink-0" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+            <svg class="w-4 h-4 sun-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="w-4 h-4 moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+
+          <!-- CTA Button ("Get a Quote") -->
+          <a href="contact.html#quote-form" class="px-3 py-2 xl:px-6 xl:py-2.5 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 text-[11px] xl:text-xs font-bold uppercase tracking-wider hover:bg-[#C5A880] dark:hover:bg-[#C5A880] dark:hover:text-white transition-colors border-sharp whitespace-nowrap flex-shrink-0">
+            Get a Quote
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button (<1024px) -->
+        <div class="flex lg:hidden items-center">
+          <button id="mobile-menu-btn" type="button" class="p-2 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:text-[#C5A880] focus:outline-none border-sharp" aria-label="Open Mobile Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer (<1024px) -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-50 bg-white dark:bg-[#0A0A0B] flex flex-col justify-between overflow-y-auto">
+      <div class="p-6">
+        <div class="flex items-center justify-between pb-6 border-b border-neutral-200 dark:border-neutral-800">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-neutral-900 dark:bg-white flex items-center justify-center text-white dark:text-neutral-950 font-bold text-lg border-sharp">V</div>
+            <span class="tracking-widest text-base font-bold uppercase text-neutral-950 dark:text-white">VERONA</span>
+          </a>
+          <button id="mobile-menu-close" type="button" class="p-2 text-neutral-700 dark:text-neutral-300 hover:text-[#C5A880] border border-neutral-200 dark:border-neutral-800 border-sharp" aria-label="Close Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation Links -->
+        <div class="py-6 space-y-4">
+          <div class="border-b border-neutral-200 dark:border-neutral-800 pb-3">
+            <button id="mobile-home-dropdown-btn" class="w-full flex items-center justify-between py-2 text-sm font-bold uppercase tracking-wider text-neutral-900 dark:text-white">
+              <span>Home Demos</span>
+              <span class="mobile-home-chevron transition-transform duration-200"><svg class="w-3.5 h-3.5 transition-transform duration-200 nav-link-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span>
+            </button>
+            <div id="mobile-home-dropdown-menu" class="hidden pl-4 pt-2 space-y-2 border-l-2 border-[#C5A880] mt-2">
+              <a href="index.html" class="block py-1.5 text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400">
+                1. Home - Signature Collections
+              </a>
+              <a href="home-showroom.html" class="block py-1.5 text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400">
+                2. Home - Sanitaryware Elegance
+              </a>
+            </div>
+          </div>
+
+          <a href="about.html" class="block py-2 text-sm font-bold uppercase tracking-wider text-neutral-900 dark:text-white">About Us</a>
+          <a href="products.html" class="block py-2 text-sm font-bold uppercase tracking-wider text-neutral-900 dark:text-white">Products</a>
+          <a href="visualizer.html" class="block py-2 text-sm font-bold uppercase tracking-wider text-[#C5A880]">Visualizer Gallery</a>
+          <a href="blog.html" class="block py-2 text-sm font-bold uppercase tracking-wider text-neutral-900 dark:text-white">Blog</a>
+          <a href="contact.html" class="block py-2 text-sm font-bold uppercase tracking-wider text-neutral-900 dark:text-white">Contact</a>
+        </div>
+      </div>
+
+      <!-- Mobile Utilities & CTA Container (RTL Arrow icon ONLY) -->
+      <div class="p-6 bg-neutral-50 dark:bg-neutral-950 border-t border-neutral-200 dark:border-neutral-800 space-y-4">
+        <div class="grid grid-cols-2 gap-3">
+          <!-- Mobile Double Arrow RTL Toggle (ONLY ARROW ICON) -->
+          <button type="button" class="rtl-toggle-btn w-full py-3 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-800 dark:text-neutral-200 border-sharp" aria-label="Toggle Direction">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+          </button>
+
+          <!-- Mobile Dark/Light Toggle -->
+          <button type="button" class="theme-toggle-btn w-full py-3 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-200 border-sharp">
+            <svg class="w-4 h-4 sun-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="w-4 h-4 moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+        </div>
+
+        <a href="contact.html#quote-form" class="block w-full text-center py-3.5 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 text-xs font-bold uppercase tracking-widest hover:bg-[#C5A880] border-sharp">
+          Get a Quote
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+<main>
+  <!-- CONTAINER 1: Visualizer Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center bg-neutral-950 overflow-hidden" id="visualizer-hero">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.pexels.com/photos/7828501/pexels-photo-7828501.jpeg" alt="Architectural space visualizer" class="w-full h-full object-cover">
+      </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <span class="subheading-luxury text-[#C5A880]">Spatial Photorealism</span>
+      <h1 class="hero-title text-4xl sm:text-6xl font-bold tracking-tight uppercase max-w-4xl mx-auto mt-4 mb-6 leading-tight">
+        Spatial Material Visualizer & Gallery
+      </h1>
+      <p class="hero-subtitle text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        Preview our sintered slabs, bookmatched marble, and freestanding sanitaryware suites inside architectural spaces before committing to fabrication.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTAINER 2: Interactive Room Finishes Switcher -->
+  <section class="py-24 bg-white dark:bg-[#0A0A0B] border-b border-neutral-200 dark:border-neutral-800" id="interactive-stage">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="subheading-luxury">Live Room Simulation</span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase mt-2">
+            Interactive Surface Switcher
+          </h2>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-neutral-500 max-w-md">
+          Click any material swatch below to dynamically swap the architectural master suite scene and technical specifications.
+        </p>
+      </div>
+
+      <!-- Swatch Selection Bar with Unique Thumbnails -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <button type="button" class="visualizer-swatch-btn border-2 border-[#C5A880] p-4 bg-neutral-50 dark:bg-neutral-900 border-sharp text-left transition-all scale-105"
+          data-img="https://images.pexels.com/photos/7587873/pexels-photo-7587873.jpeg"
+          data-title="Statuario Supreme Sintered Bath"
+          data-desc="Monumental 3200×1600mm bookmatched slabs with feather grey veining on pure white. Complemented by monolithic matte composite freestanding bath."
+          data-format="3200×1600×12 mm"
+          data-finish="Silk Satin Honed"
+          data-absorption="&lt; 0.03% (Impermeable)">
+          <div class="h-20 w-full overflow-hidden mb-3">
+            <img src="https://images.pexels.com/photos/7587873/pexels-photo-7587873.jpeg" alt="Statuario swatch texture" class="w-full h-full object-cover">
+          </div>
+          <span class="subheading-luxury text-[9px] block">Option 01</span>
+          <strong class="text-xs font-bold uppercase block mt-1 text-neutral-900 dark:text-white">Statuario Supreme</strong>
+        </button>
+
+        <button type="button" class="visualizer-swatch-btn border border-neutral-300 dark:border-neutral-700 p-4 bg-neutral-50 dark:bg-neutral-900 border-sharp text-left transition-all hover:border-[#C5A880]"
+          data-img="https://images.pexels.com/photos/7031704/pexels-photo-7031704.jpeg"
+          data-title="Travertino Romano Lounge Spa"
+          data-desc="Warm porous-effect sintered porcelain capturing authentic Roman cross-cut linear banding with zero maintenance or water absorption."
+          data-format="3000×1500×12 mm"
+          data-finish="Velvet Touch Natural"
+          data-absorption="&lt; 0.04% (Impermeable)">
+          <div class="h-20 w-full overflow-hidden mb-3">
+            <img src="https://images.pexels.com/photos/7031704/pexels-photo-7031704.jpeg" alt="Travertine swatch texture" class="w-full h-full object-cover">
+          </div>
+          <span class="subheading-luxury text-[9px] block">Option 02</span>
+          <strong class="text-xs font-bold uppercase block mt-1 text-neutral-900 dark:text-white">Travertino Romano</strong>
+        </button>
+
+        <button type="button" class="visualizer-swatch-btn border border-neutral-300 dark:border-neutral-700 p-4 bg-neutral-50 dark:bg-neutral-900 border-sharp text-left transition-all hover:border-[#C5A880]"
+          data-img="https://imgs.search.brave.com/pi05tj0DP5NNWcLNJcjSjx_ECOIMPXLk2UEwaPGhwvA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c3RvbmV0ZWNoLmdy/L2ZpbGVzL2ZpbGVz/L2Jsb2cvMjAyNi8w/NC1ORVJPLU1BUlFV/SU5BL05FUk8lMjBN/QVJRVUlOQSUyMFJF/Q0VQVElPTiUyMERF/U0slMjBTVE9ORVRF/Q0gucG5n"
+          data-title="Nero Marquina Wet Room"
+          data-desc="Deep obsidian sintered marble with lightning white calcic veining. Paired with PVD brushed gold thermostatic rain shower columns."
+          data-format="3200×1600×12 mm"
+          data-finish="High Gloss Polished"
+          data-absorption="&lt; 0.02% (Impermeable)">
+          <div class="h-20 w-full overflow-hidden mb-3">
+            <img src="https://imgs.search.brave.com/pi05tj0DP5NNWcLNJcjSjx_ECOIMPXLk2UEwaPGhwvA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c3RvbmV0ZWNoLmdy/L2ZpbGVzL2ZpbGVz/L2Jsb2cvMjAyNi8w/NC1ORVJPLU1BUlFV/SU5BL05FUk8lMjBN/QVJRVUlOQSUyMFJF/Q0VQVElPTiUyMERF/U0slMjBTVE9ORVRF/Q0gucG5n" alt="Nero swatch texture" class="w-full h-full object-cover">
+          </div>
+          <span class="subheading-luxury text-[9px] block">Option 03</span>
+          <strong class="text-xs font-bold uppercase block mt-1 text-neutral-900 dark:text-white">Nero Marquina</strong>
+        </button>
+
+        <button type="button" class="visualizer-swatch-btn border border-neutral-300 dark:border-neutral-700 p-4 bg-neutral-50 dark:bg-neutral-900 border-sharp text-left transition-all hover:border-[#C5A880]"
+          data-img="https://images.pexels.com/photos/36272645/pexels-photo-36272645.jpeg"
+          data-title="Venetian Terrazzo Grande"
+          data-desc="Inlaid marble aggregate matrix with neutral sand cement base, delivering MOHS 8 surface hardness for high-traffic luxury residential foyers."
+          data-format="1200×600×10 mm"
+          data-finish="Matte Honed"
+          data-absorption="&lt; 0.05% (Impermeable)">
+          <div class="h-20 w-full overflow-hidden mb-3">
+            <img src="https://images.pexels.com/photos/36272645/pexels-photo-36272645.jpeg" alt="Terrazzo swatch texture" class="w-full h-full object-cover">
+          </div>
+          <span class="subheading-luxury text-[9px] block">Option 04</span>
+          <strong class="text-xs font-bold uppercase block mt-1 text-neutral-900 dark:text-white">Venetian Terrazzo</strong>
+        </button>
+      </div>
+
+      <!-- Main Visualizer Display Stage -->
+      <div class="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          
+          <div class="lg:col-span-8 relative min-h-[460px] bg-black">
+            <img id="visualizer-main-img" src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1600&q=80" alt="Active Visualized Room" class="w-full h-full object-cover transition-opacity duration-300">
+            <div class="absolute top-4 left-4 bg-neutral-900/90 text-white text-[10px] font-mono tracking-widest uppercase px-3 py-1.5 border-sharp">
+              Live Photorealistic Stage
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 p-8 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-neutral-200 dark:border-neutral-800">
+            <div>
+              <span class="subheading-luxury text-[10px]">Active Architectural Specification</span>
+              <h3 id="visualizer-title" class="text-2xl font-bold uppercase mt-1 mb-4">
+                Statuario Supreme Sintered Bath
+              </h3>
+              <p id="visualizer-desc" class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8">
+                Monumental 3200×1600mm bookmatched slabs with feather grey veining on pure white. Complemented by monolithic matte composite freestanding bath.
+              </p>
+
+              <div class="space-y-3 text-xs font-mono border-t border-neutral-200 dark:border-neutral-800 pt-6">
+                <div class="flex justify-between">
+                  <span class="text-neutral-500">Slab Format:</span>
+                  <strong id="visualizer-format" class="text-neutral-900 dark:text-white">3200×1600×12 mm</strong>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-neutral-500">Surface Finish:</span>
+                  <strong id="visualizer-finish" class="text-neutral-900 dark:text-white">Silk Satin Honed</strong>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-neutral-500">Absorption Rate:</span>
+                  <strong id="visualizer-absorption" class="text-neutral-900 dark:text-white">&lt; 0.03% (Impermeable)</strong>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-neutral-500">Grout Tolerance:</span>
+                  <strong class="text-neutral-900 dark:text-white">1.0 mm Razor Edge</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <button class="w-full py-3.5 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 text-xs font-bold uppercase tracking-widest hover:bg-[#C5A880] transition-colors border-sharp open-sample-modal-btn" data-product-name="Statuario Supreme Sintered Bath">
+                Request This Specification Swatch
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTAINER 3: High-Contrast Masonry / Grid Room Gallery (1024px responsive) -->
+  <section class="py-24 bg-neutral-50 dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800" id="spatial-gallery">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="subheading-luxury">Architectural Compositions</span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase mt-2">
+          Curated Spatial Room Gallery
+        </h2>
+        <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-4 leading-relaxed">
+          Structured architectural spaces photographed across leading residences, boutique hotels, and wellness spas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp overflow-hidden group hover:border-[#C5A880] transition-colors">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://imgs.search.brave.com/YR7iYfkVI7UHfcaXw7abn4jTMI80Ch-cHo1xu3R8Few/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGVudGhvdXNlcy16/dWVyaWNoLmNoL2lt/Zy93b2hudW5nZW4z/Yi5qcGc" alt="Penthouse Master Bathroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-neutral-900 text-white text-[9px] font-mono tracking-wider uppercase px-2 py-1">Master Suite</span>
+          </div>
+          <div class="p-6">
+            <span class="subheading-luxury text-[10px]">Zurich Penthouse</span>
+            <h3 class="text-base font-bold uppercase mt-1 mb-2">Monolithic Wet Room</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-4">
+              Integrated floor-to-ceiling Calacatta slabs with flush ceiling shower and linear perimeter drain.
+            </p>
+            <span class="text-[11px] font-mono text-neutral-500">Surface: Calacatta Honed 12mm</span>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp overflow-hidden group hover:border-[#C5A880] transition-colors">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://imgs.search.brave.com/UQJXfz-RQRd_NCG5gq_3nZRLoNTWbC5Iogsi1UEwq9M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFKempqWHVodkwu/anBn" alt="Minimalist Villa Kitchen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-neutral-900 text-white text-[9px] font-mono tracking-wider uppercase px-2 py-1">Culinary Salon</span>
+          </div>
+          <div class="p-6">
+            <span class="subheading-luxury text-[10px]">Copenhagen Residence</span>
+            <h3 class="text-base font-bold uppercase mt-1 mb-2">Basalt Scuro Island</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-4">
+              Waterjet-mitered 20mm basalt slab with seamlessly flush induction hobs and under-mount basin.
+            </p>
+            <span class="text-[11px] font-mono text-neutral-500">Surface: Basalt Scuro 20mm</span>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp overflow-hidden group hover:border-[#C5A880] transition-colors">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://imgs.search.brave.com/ejSvaFXX2gAVvcuXoAP9gxgQ3nxE1SyUMRK0nD9_uNU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sdWNp/ZGNtLmltZ2l4Lm5l/dC85NTE4Mi9Ib3Rl/bC82MTA0Mi9JbWFn/ZS9jeVBjR3hjQkhF/MnpZY1Y1U3I1dVl3/XzEyX1N1aXRlXzMw/Mi5qcGcuanBnP2g9/MTE3MyZ3PTY2MA" alt="Travertine Spa Enclave" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-neutral-900 text-white text-[9px] font-mono tracking-wider uppercase px-2 py-1">Wellness Retreat</span>
+          </div>
+          <div class="p-6">
+            <span class="subheading-luxury text-[10px]">Lake Como Spa</span>
+            <h3 class="text-base font-bold uppercase mt-1 mb-2">Travertine Hydro Enclave</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-4">
+              Continuous cross-cut sintered travertine enveloping sunken hydrotherapy pools with zero water absorption.
+            </p>
+            <span class="text-[11px] font-mono text-neutral-500">Surface: Travertino Navona 12mm</span>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp overflow-hidden group hover:border-[#C5A880] transition-colors">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=80" alt="Alfresco Stone Terrace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-neutral-900 text-white text-[9px] font-mono tracking-wider uppercase px-2 py-1">Exterior Deck</span>
+          </div>
+          <div class="p-6">
+            <span class="subheading-luxury text-[10px]">Cap d'Antibes Villa</span>
+            <h3 class="text-base font-bold uppercase mt-1 mb-2">Pedestal Terrace Paving</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-4">
+              R11 frostproof 20mm porcelain slabs installed on self-leveling pedestals for concealed rainwater drainage.
+            </p>
+            <span class="text-[11px] font-mono text-neutral-500">Surface: Pietra Grey R11 20mm</span>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp overflow-hidden group hover:border-[#C5A880] transition-colors">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=80" alt="Boutique Hotel Foyer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-neutral-900 text-white text-[9px] font-mono tracking-wider uppercase px-2 py-1">Commercial Foyer</span>
+          </div>
+          <div class="p-6">
+            <span class="subheading-luxury text-[10px]">Mayfair Hotel</span>
+            <h3 class="text-base font-bold uppercase mt-1 mb-2">Monumental Terrazzo Atrium</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-4">
+              High-density Italian aggregate terrazzo tiles polished to a soft satin gloss, resisting thousands of daily visitors.
+            </p>
+            <span class="text-[11px] font-mono text-neutral-500">Surface: Terrazzo Grande 10mm</span>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp overflow-hidden group hover:border-[#C5A880] transition-colors">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80" alt="Executive Powder Room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-neutral-900 text-white text-[9px] font-mono tracking-wider uppercase px-2 py-1">Powder Room</span>
+          </div>
+          <div class="p-6">
+            <span class="subheading-luxury text-[10px]">Chelsea Penthouse</span>
+            <h3 class="text-base font-bold uppercase mt-1 mb-2">Fluted Vanity Surround</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-4">
+              Ribbed 3D ceramic tiles framing a bespoke monolithic Nero Marquina vessel basin with PVD brushed brass mixer.
+            </p>
+            <span class="text-[11px] font-mono text-neutral-500">Surface: Fluted Ceramic 12mm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTAINER 4: Before & After Surface Transformation -->
+  <section class="py-24 bg-white dark:bg-[#0A0A0B] border-b border-neutral-200 dark:border-neutral-800" id="before-after">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="subheading-luxury">Architectural Transformation</span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase mt-2">
+          Before & After Surface Renovation
+        </h2>
+        <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-4 leading-relaxed">
+          Slide to examine how replacing fragmented multi-joint tiles with Verona monolithic sintered mega-slabs expands visual volume.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="relative h-[480px] overflow-hidden border border-neutral-200 dark:border-neutral-800 border-sharp select-none">
+          <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=1600&q=80" alt="Before renovation interior" class="absolute inset-0 w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-neutral-900/90 text-white text-xs font-mono uppercase tracking-wider px-3 py-1">
+            Before: Segmented Grout Lines
+          </span>
+
+          <div id="after-img-wrapper" class="absolute inset-0 w-1/2 overflow-hidden border-r-2 border-[#C5A880]">
+            <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1600&q=80" alt="After Verona sintered slab renovation" class="absolute inset-0 w-full h-full object-cover max-w-none" style="width: 896px;">
+            <span class="absolute top-4 right-4 bg-[#C5A880] text-neutral-950 text-xs font-mono font-bold uppercase tracking-wider px-3 py-1">
+              After: Verona Sintered Slab
+            </span>
+          </div>
+
+          <input type="range" min="0" max="100" value="50" id="before-after-slider" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" aria-label="Compare Before and After Renovation">
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-neutral-500 font-mono mt-3">
+          <span>&larr; Drag slider left to reveal Original State</span>
+          <span>Drag slider right to reveal Verona Renovation &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTAINER 5: Surface Texture & Lighting Simulator -->
+  <section class="py-24 bg-neutral-50 dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800" id="lighting-simulator">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <span class="subheading-luxury">Color Rendering Index (CRI)</span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight uppercase">
+            Architectural Lighting Simulator
+          </h2>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Surface finishes render differently under various color temperatures. Test how warm residential halogen, neutral architectural gallery lighting, and direct 6500K daylight interact with polished and honed sintered slabs.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <button type="button" data-temp="2700" class="lighting-temp-btn w-full p-4 border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp text-left flex items-center justify-between hover:border-[#C5A880] transition-colors">
+              <div>
+                <strong class="block text-sm uppercase text-neutral-900 dark:text-white">2700K Warm Halogen</strong>
+                <span class="text-xs text-neutral-500">Deepens golden travertine tones and brushed brass</span>
+              </div>
+              <span class="text-xs font-mono font-bold text-[#C5A880]">Warm Amber</span>
+            </button>
+
+            <button type="button" data-temp="4000" class="lighting-temp-btn w-full p-4 border border-neutral-900 dark:border-white bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 border-sharp text-left flex items-center justify-between transition-colors">
+              <div>
+                <strong class="block text-sm uppercase">4000K Neutral Architectural</strong>
+                <span class="text-xs text-neutral-400 dark:text-neutral-600">True spectral color fidelity for marble vein inspection</span>
+              </div>
+              <span class="text-xs font-mono font-bold text-[#C5A880]">Default</span>
+            </button>
+
+            <button type="button" data-temp="6500" class="lighting-temp-btn w-full p-4 border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 border-sharp text-left flex items-center justify-between hover:border-[#C5A880] transition-colors">
+              <div>
+                <strong class="block text-sm uppercase text-neutral-900 dark:text-white">6500K Direct Daylight</strong>
+                <span class="text-xs text-neutral-500">High reflectivity and crystalline clarity on polished surfaces</span>
+              </div>
+              <span class="text-xs font-mono font-bold text-[#C5A880]">Cool Sky</span>
+            </button>
+          </div>
+
+          <p id="lighting-temp-label" class="text-xs font-mono text-[#C5A880] pt-2">
+            4000K Neutral Architectural White - True color fidelity for Statuario & Basalt
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="border border-neutral-200 dark:border-neutral-800 p-3 bg-white dark:bg-neutral-900 border-sharp">
+            <img id="lighting-sim-img" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80" alt="Lighting simulator stone surface" class="w-full h-[450px] object-cover transition-all duration-300">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTAINER 6: 3D Spatial Rendering & CAD Consultation Request -->
+  <section class="py-24 bg-neutral-900 text-white relative overflow-hidden" id="cad-consultation">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <span class="subheading-luxury text-[#C5A880]">Architectural Visualization Atelier</span>
+      <h2 class="hero-title text-3xl sm:text-5xl font-bold tracking-tight uppercase mt-3 mb-6">
+        Submit Your Floorplans for 3D Photorealism
+      </h2>
+      <p class="hero-subtitle text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-10">
+        Our digital design studio converts your CAD floorplans into full 8K photorealistic ray-traced walkthroughs within 48 hours, detailing every joint, corner miter, and lighting angle.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="contact.html#quote-form" class="w-full sm:w-auto px-8 py-4 hero-btn-primary font-bold text-xs uppercase tracking-widest border-sharp">
+          Upload Floorplans & Book Render
+        </a>
+        <a href="products.html" class="w-full sm:w-auto px-8 py-4 border border-white text-white font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-neutral-950 transition-colors border-sharp">
+          Explore Material Specifications
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <!-- GLOBAL FOOTER (Identical across all pages) -->
+  <footer class="bg-neutral-950 text-neutral-300 border-t border-neutral-800 pt-16 pb-12 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-16 border-b border-neutral-800">
+        
+        <!-- Brand Col (Must link to index.html) -->
+        <div class="lg:col-span-2 space-y-6">
+          <a href="index.html" class="flex items-center gap-3.5 group">
+            <div class="w-10 h-10 bg-white flex items-center justify-center text-neutral-950 font-bold text-xl border-sharp">
+              V
+            </div>
+            <div class="flex flex-col">
+              <span class="tracking-widest text-lg font-bold text-white uppercase leading-none">VERONA</span>
+              <span class="text-[9px] tracking-[0.25em] uppercase text-neutral-400 font-semibold mt-1">Surfaces & Sanitary</span>
+            </div>
+          </a>
+          <p class="text-sm text-neutral-400 max-w-sm leading-relaxed">
+            Curators of high-caliber architectural porcelain, bookmatched marble mega-slabs, and precision-engineered Italian sanitaryware suites for international residential and commercial commissions.
+          </p>
+          
+          <!-- Social Icons (Latest SVGs, explicitly linked) -->
+          <div class="flex items-center gap-3 pt-2">
+            <!-- X (Twitter) -->
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 border border-neutral-800 hover:border-[#C5A880] hover:text-[#C5A880] flex items-center justify-center transition-colors text-white border-sharp" aria-label="Follow Verona on X">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 border border-neutral-800 hover:border-[#C5A880] hover:text-[#C5A880] flex items-center justify-center transition-colors text-white border-sharp" aria-label="Follow Verona on Instagram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.449-1.44z"/></svg>
+            </a>
+            <!-- Pinterest -->
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 border border-neutral-800 hover:border-[#C5A880] hover:text-[#C5A880] flex items-center justify-center transition-colors text-white border-sharp" aria-label="Follow Verona on Pinterest">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.357-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 12-5.373 12-12 0-6.628-5.393-12-12-12z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 border border-neutral-800 hover:border-[#C5A880] hover:text-[#C5A880] flex items-center justify-center transition-colors text-white border-sharp" aria-label="Follow Verona on LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="space-y-4">
+          <span class="subheading-luxury text-white">Collections</span>
+          <ul class="space-y-2.5 text-xs tracking-wider uppercase">
+            <li><a href="products.html" class="hover:text-[#C5A880] transition-colors">Porcelain Slabs</a></li>
+            <li><a href="products.html" class="hover:text-[#C5A880] transition-colors">Bookmatched Marble</a></li>
+            <li><a href="home-showroom.html" class="hover:text-[#C5A880] transition-colors">Sanitaryware Suites</a></li>
+            <li><a href="products.html" class="hover:text-[#C5A880] transition-colors">Monolithic Basins</a></li>
+            <li><a href="visualizer.html" class="hover:text-[#C5A880] transition-colors">Spatial Visualizer</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Architecture & Trade -->
+        <div class="space-y-4">
+          <span class="subheading-luxury text-white">Architectural Services</span>
+          <ul class="space-y-2.5 text-xs tracking-wider uppercase">
+            <li><a href="about.html" class="hover:text-[#C5A880] transition-colors">Quarry Sourcing</a></li>
+            <li><a href="products.html" class="hover:text-[#C5A880] transition-colors">BIM / Revit Library</a></li>
+            <li><a href="contact.html#quote-form" class="hover:text-[#C5A880] transition-colors">Sample Box Delivery</a></li>
+            <li><a href="blog.html" class="hover:text-[#C5A880] transition-colors">Technical Whitepapers</a></li>
+            <li><a href="contact.html" class="hover:text-[#C5A880] transition-colors">Private VIP Viewing</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Flagship Salons -->
+        <div class="space-y-4">
+          <span class="subheading-luxury text-white">Global Showrooms</span>
+          <div class="text-xs space-y-3 text-neutral-400">
+            <div>
+              <strong class="text-white block uppercase tracking-wider">Milano Flagship</strong>
+              <span>Via Durini 14, 20122 Milano</span>
+            </div>
+            <div>
+              <strong class="text-white block uppercase tracking-wider">New York Salon</strong>
+              <span>200 Lexington Ave, New York, NY</span>
+            </div>
+            <div>
+              <strong class="text-white block uppercase tracking-wider">London Mayfair</strong>
+              <span>42 Berkeley Square, London W1J</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
+        <p>© 2026 VERONA SURFACES & SANITARY S.P.A. All architectural rights reserved. Pure non-morphic architectural design.</p>
+        <div class="flex items-center gap-6">
+          <a href="about.html" class="hover:text-[#C5A880] transition-colors">Sustainability Charter</a>
+          <a href="contact.html" class="hover:text-[#C5A880] transition-colors">Trade Portal</a>
+          <a href="contact.html" class="hover:text-[#C5A880] transition-colors">Legal & Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

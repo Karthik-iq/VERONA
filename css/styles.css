@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   VERONA SURFACES & SANITARYWARE - GLOBAL ARCHITECTURAL DESIGN SYSTEM
+   - Clean, professional default sans-serif typography (Zero stylized fonts)
+   - Real, authentic high-clarity photos without overlays or opacity layers
+   - Crystal-clear text visibility via multi-layered text shadows
+   - STRICTLY ZERO Gradients
+   - STRICTLY ZERO Morphism (no glassmorphism, no neumorphism)
+   - Razor-sharp corners, balanced architectural gaps, 100% responsive
+   - Uniform card height and text alignment architecture
+   ========================================================================== */
+
+:root {
+  --font-default: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --color-heading-light: #0F172A;
+  --color-heading-dark: #F8FAFC;
+  --color-brass: #C5A880;
+  --color-brass-dark: #9E7D53;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-default);
+  color: #334155;
+  background-color: #FFFFFF;
+}
+
+html.dark {
+  color: #94A3B8;
+  background-color: #0A0A0B;
+}
+
+body {
+  font-family: var(--font-default);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* --------------------------------------------------------------------------
+   CLEAN PROFESSIONAL TYPOGRAPHY (ZERO STYLIZED FONTS)
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, .heading-unified {
+  font-family: var(--font-default) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: #0F172A !important;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark .heading-unified {
+  color: #F8FAFC !important;
+}
+
+/* Numbers: Clean standard non-stylized tabular numerals */
+.stat-number, .stat-counter, .metric-value, font-mono {
+  font-family: var(--font-default) !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   HERO CLARITY & TEXT SHADOW SYSTEM (RAW REAL CLARITY PHOTOS - ZERO OVERLAY)
+   Ensures text is 100% crisp and readable directly over raw vivid images
+   -------------------------------------------------------------------------- */
+.hero-title, .hero-heading {
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.95),
+    0 4px 14px rgba(0, 0, 0, 0.95),
+    0 8px 30px rgba(0, 0, 0, 0.95),
+    0 0 50px rgba(0, 0, 0, 0.9) !important;
+  font-family: var(--font-default) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.hero-subtitle {
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.95),
+    0 3px 10px rgba(0, 0, 0, 0.95),
+    0 6px 22px rgba(0, 0, 0, 0.92) !important;
+  font-family: var(--font-default) !important;
+  font-weight: 500 !important;
+}
+
+.hero-stat-number {
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.95),
+    0 4px 16px rgba(0, 0, 0, 0.95) !important;
+  font-family: var(--font-default) !important;
+  font-weight: 700 !important;
+}
+
+.hero-stat-label {
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 1px 4px rgba(0, 0, 0, 0.95),
+    0 2px 8px rgba(0, 0, 0, 0.95) !important;
+  font-weight: 600 !important;
+}
+
+.hero-badge {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  border: 1px solid #C5A880 !important;
+  color: #F1D4A8 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Secondary Hero & Overlay CTA Buttons - 100% High Contrast on Light and Dark Images */
+.hero-btn-secondary,
+.btn-hero-secondary {
+  background-color: rgba(15, 23, 42, 0.88) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.hero-btn-secondary:hover,
+.btn-hero-secondary:hover {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #FFFFFF !important;
+  text-shadow: none !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Primary Hero Button */
+.hero-btn-primary,
+.btn-hero-primary {
+  background-color: #C5A880 !important;
+  color: #0F172A !important;
+  border: 1.5px solid #C5A880 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.hero-btn-primary:hover,
+.btn-hero-primary:hover {
+  background-color: #A38760 !important;
+  border-color: #A38760 !important;
+  color: #FFFFFF !important;
+}
+
+/* Neutralized: No overlays or opacity layers */
+.hero-backdrop-clear {
+  display: none !important;
+}
+
+/* Sub-label architectural tracking */
+.subheading-luxury {
+  font-family: var(--font-default);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #C5A880;
+}
+
+html.dark .subheading-luxury {
+  color: #D4AF37;
+}
+
+/* Architectural flat buttons and card outlines */
+.border-sharp {
+  border-radius: 0px !important;
+}
+
+/* --------------------------------------------------------------------------
+   UNIFORM ARCHITECTURAL CARD ALIGNMENT SYSTEM
+   Ensures identical line heights, title baselines, specs and button baselines
+   -------------------------------------------------------------------------- */
+.card-uniform {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  justify-content: space-between !important;
+}
+
+.card-uniform-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+/* Flagship 3-column cards (index.html Container 3) */
+.card-title-flagship {
+  min-height: 4rem !important; /* Exactly 2 lines of text-2xl */
+  display: flex !important;
+  align-items: flex-start !important;
+  line-height: 1.25 !important;
+}
+
+.card-desc-flagship {
+  min-height: 3.5rem !important; /* Exactly 3 lines */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.45 !important;
+}
+
+.card-specs-flagship {
+  min-height: 5.5rem !important; /* Exactly 3 spec rows */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* 4-column cards (index.html Container 2 & home-showroom.html) */
+.card-title-format {
+  min-height: 3rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  line-height: 1.3 !important;
+}
+
+.card-desc-format {
+  min-height: 3.5rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.45 !important;
+}
+
+/* Product catalog cards (products.html) */
+.card-title-product {
+  min-height: 2.75rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  line-height: 1.35 !important;
+}
+
+.card-desc-product {
+  min-height: 3.25rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.45 !important;
+}
+
+.card-specs-product {
+  min-height: 4.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* Blog cards (blog.html) */
+.card-title-blog {
+  min-height: 3.5rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  line-height: 1.3 !important;
+}
+
+.card-desc-blog {
+  min-height: 3.5rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.45 !important;
+}
+
+/* Sanitary suites (home-showroom.html Container 3) */
+.card-title-suite {
+  min-height: 3.5rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  line-height: 1.25 !important;
+}
+
+.card-desc-suite {
+  min-height: 3.5rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.45 !important;
+}
+
+.card-specs-suite {
+  min-height: 4.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.card-footer-auto {
+  margin-top: auto !important;
+}
+
+/* --------------------------------------------------------------------------
+   NAVBAR GAP & ALIGNMENT CONTROLLER (FLAWLESS SINGLE LINE ON ALL DESKTOP)
+   -------------------------------------------------------------------------- */
+.navbar-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  white-space: nowrap !important;
+}
+
+.navbar-link-item {
+  white-space: nowrap !important;
+  font-size: 11px !important;
+  letter-spacing: 0.04em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1280px) {
+  .navbar-nav-links {
+    gap: 1.75rem;
+  }
+  .navbar-link-item {
+    font-size: 12px !important;
+    letter-spacing: 0.06em !important;
+  }
+}
+
+/* 1024px - 1279px (lg screens): Neat, clean single-line links with reduced font */
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .navbar-nav-links {
+    gap: 0.85rem !important;
+  }
+  .navbar-link-item {
+    font-size: 10.5px !important;
+    letter-spacing: 0.025em !important;
+  }
+  .navbar-utilities {
+    gap: 0.5rem !important;
+  }
+}
+
+.navbar-utilities {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap !important;
+}
+
+/* RTL Adjustments */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .nav-link-chevron {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .arrow-flip {
+  transform: scaleX(-1);
+}
+
+/* Custom crisp scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #121214;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #27272A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Flat Modal & Toast */
+.flat-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#quote-success-modal.hidden,
+.flat-modal-backdrop.hidden {
+  display: none !important;
+}
+
+/* Architectural Toast Notification Container & RTL Positioning */
+#verona-toast-container {
+  max-width: 24rem;
+}
+
+[dir="rtl"] #verona-toast-container {
+  right: auto !important;
+  left: 1.5rem !important;
+}
+
+[dir="rtl"] #verona-toast-container .border-l-4 {
+  border-left-width: 0px !important;
+  border-right-width: 4px !important;
+  border-right-color: #C5A880 !important;
+}
