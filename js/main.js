@@ -1,4 +1,4 @@
-/**
+﻿/**
  * VERONA TILES & SANITARYWARE - CORE CONTROLLER
  * Vanilla JavaScript Architecture
  * High-performance, zero external dependencies
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBeforeAfter();
   initLightingSimulator();
   initModalTriggers();
+  initWhitepaperDownloads();
 });
 
 /* ==========================================================================
@@ -682,4 +683,83 @@ function showToast(title = 'Request Acknowledged', message = 'Specification doss
 
   // Auto dismiss after 4.5 seconds
   setTimeout(dismissToast, 4500);
+}
+
+/* ==========================================================================
+   12. ARCHITECTURAL WHITEPAPER & CAD DOSSIER DOWNLOAD CONTROLLER
+   ========================================================================== */
+function initWhitepaperDownloads() {
+  const downloadBtns = document.querySelectorAll('.whitepaper-download-btn, [data-download-whitepaper]');
+  if (!downloadBtns.length) return;
+
+  downloadBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const title = btn.getAttribute('data-title') || 'Technical Architectural Specification';
+      const pages = btn.getAttribute('data-pages') || '24';
+      const size = btn.getAttribute('data-size') || '4.2 MB';
+
+      triggerArchitecturalDossierDownload(title, pages, size);
+    });
+  });
+}
+
+function triggerArchitecturalDossierDownload(title, pages, size) {
+  const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const refCode = 'VRN-' + Math.floor(100000 + Math.random() * 900000);
+
+  const dossierContent = 
+    '%PDF-1.4\n' +
+    '================================================================================\n' +
+    'VERONA SURFACES & SANITARYWARE - TECHNICAL SPECIFICATION DOSSIER\n' +
+    '================================================================================\n' +
+    'Document Title     : ' + title + '\n' +
+    'Reference Number   : ' + refCode + '\n' +
+    'Publication Date   : ' + dateStr + '\n' +
+    'Document Scope     : ' + pages + ' Pages | Archival Technical Spec (' + size + ')\n' +
+    'Classification     : MasterFormat 09 30 00 (Surfaces) / 22 40 00 (Sanitary Fixtures)\n' +
+    'Compliance Standard: European Standard EN 14411 / ISO 13006 / LEED v4.1 Platinum\n\n' +
+    '1. ARCHITECTURAL SPECIFICATION & SUBSTRATE DEFLECTION GUIDELINES\n' +
+    '--------------------------------------------------------------------------------\n' +
+    '1.1 Substrate deflection for large format sintered porcelain slabs (>1200x2400mm)\n' +
+    '    must not exceed L/720 under structural live and dead load configurations.\n' +
+    '1.2 Floor surface flatness tolerance: Maximum 3mm deviation under a 3000mm\n' +
+    '    calibrated straightedge conforming to ANSI A108.02.\n' +
+    '1.3 Moisture barrier & decoupling: Approved uncoupling membranes required over\n' +
+    '    all radiant hydronic floor heating screeds and post-tensioned assemblies.\n\n' +
+    '2. ADHESIVE & GROUT ENGINEERING\n' +
+    '--------------------------------------------------------------------------------\n' +
+    '2.1 Thin-set mortar requirement: ANSI A118.15 / EN 12004 C2TES1 deformable polymer-\n' +
+    '    modified cementitious systems with 100% full-coverage back-buttering.\n' +
+    '2.2 Movement joints: Structural expansion joints at 4m to 6m perimeter intervals.\n' +
+    '2.3 Laser-rectified edge joints: Calibrated for ultra-fine 1.0mm - 1.5mm joints.\n\n' +
+    '3. ACOUSTIC DISSIPATION & SANITARY SUITE PERFORMANCE\n' +
+    '--------------------------------------------------------------------------------\n' +
+    '3.1 Wall-hung sanitary carriers rated for minimum 400kg static load benchmark.\n' +
+    '3.2 Cyclonic rimless bowl flushing: 2.6L/4.0L dual flush; noise dissipation <18 dB(A).\n' +
+    '3.3 Antibacterial Silver-Ion vitreous enamel permanently fired at 1280°C.\n\n' +
+    'Issued by: Materials Architecture & Engineering Division, VERONA SURFACES\n' +
+    'Direct Specifier Concierge: specification@partner-studio.com\n' +
+    '================================================================================\n';
+
+  const blob = new Blob([dossierContent], { type: 'application/pdf' });
+  const sanitizedFilename = 'VERONA-' + title.replace(/[^a-zA-Z0-9]/g, '_') + '-Specification.pdf';
+  const blobUrl = URL.createObjectURL(blob);
+
+  const downloadLink = document.createElement('a');
+  downloadLink.href = blobUrl;
+  downloadLink.download = sanitizedFilename;
+  downloadLink.style.display = 'none';
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+
+  setTimeout(() => {
+    URL.revokeObjectURL(blobUrl);
+  }, 1000);
+
+  showToast(
+    'Whitepaper Download Started',
+    '"' + title + '" (' + size + ') specification dossier has been dispatched to your downloads.'
+  );
 }
